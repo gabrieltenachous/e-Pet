@@ -1,0 +1,202 @@
+﻿body {
+    background-color: aliceblue;
+    font-family: Arial,Calibri;
+}
+
+/* Menu */
+
+.navbar-toggler-icon {
+    color: black;
+}
+
+.navbar {
+    background-color: #FFAD0B;
+    font-size: 20px;
+}
+
+/* Seção centralizada na parte superior da navegação */
+.topnav-centered a {
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Menu de navegação responsiva - exibe links um em cima do outro em vez de um ao lado do outro (para dispositivos móveis) */
+@media only screen and (max-width: 959px) {
+    .topnav-centered a {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .topnav-centered a {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .topnav-centered a {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .topnav-centered a {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .topnav-centered a {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+}
+
+/* ------------------ */
+
+/* Configuração Footer */
+#divFooter p {
+    LINE-HEIGHT: 0px;
+    font-size: 20px;
+}
+
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {
+    #divFooter p {
+        font-size: 10px;
+    }
+}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    #divFooter p {
+        font-size: 12px;
+    }
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+    #divFooter p {
+        font-size: 14px;
+    }
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    #divFooter p {
+        font-size: 9px;
+    }
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+    #divFooter p {
+        font-size: 7px;
+    }
+}
+
+/* ---------------- */
+
+hr {
+    line-height: 0px;
+    border-color: black;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+#CarouselExampleControls img {
+    filter: brightness( 30% );
+    /*filter: blur( 3px ); desfocar*/
+}
+
+.box {
+    width: 50%;
+    float: left;
+    height: 450px; /*Altura da linha*/
+}
+
+.linha-vertical {
+    border-left: 1px solid; /* Adiciona borda esquerda na div como ser fosse uma linha.*/
+    box-sizing: border-box;
+}
+
+.btn1:hover {
+    background-color: gold;
+    color: gold;
+    background-size: auto;
+}
+
+/*Espaço do RBL*/
+.rbl input[type="radio"] {
+    margin-left: 10px;
+    margin-right: 3px;
+}
+
+
+/* Carrousel responsivo */
+
+/* Classe base do carousel */
+.carousel {
+    margin-bottom: 4rem;
+}
+
+/* Já que usamos posicionamento de imagens, precisaremos fazer alguns ajustes na legenda */
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+}
+
+/* Declaramos alturas, devido ao posicionamento do elemento img */
+.carousel-item {
+    height: 32rem;
+    background-color: #777;
+}
+
+    .carousel-item > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        height: 32rem;
+    }
+
+
+@media (min-width: 40em) {
+    /* Aumenta o tamanho do conteúdo do carousel */
+    .carousel-caption p {
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+
+    .featurette-heading {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 62em) {
+    .featurette-heading {
+        margin-top: 7rem;
+    }
+}
+
+/* ------------------ */
+
+/*SUA LOJA IMAGEM E TEXTO CENTRALIZADO*/

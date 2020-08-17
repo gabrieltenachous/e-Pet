@@ -1,0 +1,142 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Pag_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-3.5.1.min.js"></script>
+    <script src="../Scripts/popper.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+
+    <%--Icone da lupa em pesquisar--%>
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" />
+
+    <%--mascaras para celular, cep, cpf--%>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+    <%--Tipo de fonte para nome da empresa--%>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+
+    <%--Campo de pesquisa de cidades e estados--%>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+    <link href="https://www.jqueryscript.net/demo/Bootstrap-4-Chosen-Plugin/dist/css/component-chosen.css" rel="stylesheet" />
+
+    <%--Minha folha de estilos--%>
+    <link href="../Content/MeuEstilo.css" rel="stylesheet" />
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header class="container-fluid">
+            <nav class="navbar navbar-expand-md navbar-light">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <ul class="nav navbar-nav mx-auto">
+                    <li class="topnav-centered text-center">
+                        <a class="nav-link" href="telaInicial.aspx" runat="server">
+                            <img src="../Imagem/Logo.png" />
+                        </a>
+                    </li>
+                </ul>
+                <div id="menu" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item active text-center">
+                            <a class="nav-link" runat="server" href="Mapa.aspx">
+                                <img src="../Icons/mapa.png" />
+                            </a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a class="nav-link" href="Carrinho.aspx" runat="server">
+                                <img src="../Icons/carrinho.png" />
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav mx-auto">
+                    </ul>
+
+                    <asp:Panel runat="server" CssClass="mr-4" ID="PnlLogado">
+                        <ul class="nav navbar-nav mr-5">
+                            <li class="nav-item text-center">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                                        <asp:Literal runat="server" ID="ltlNomeUsuario"></asp:Literal>
+                                        <span class="caret"></span>
+
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item" href="../PaginaCliente/MeusDados.aspx">Meus dados</a></li>
+                                        <li><a class="dropdown-item" href="../PaginaCliente/Endereco.aspx">Endereço</a></li>
+                                        <li><a class="dropdown-item" href="../PaginaCliente/MeiosPagamento.aspx">Meios de pagamento</a></li>
+                                        <li><a class="dropdown-item" href="../PaginaCliente/Pedidos.aspx">Pedidos</a></li>
+                                        <li><a class="dropdown-item" href="../PaginaCliente/Historico.aspx">Historico de pedidos</a></li>
+                                        <li>
+                                            <asp:Button runat="server" ID="btnSair" ValidationGroup=""
+                                                CssClass="btn btn-danger btn-sm dropdown-item" Text="Sair" OnClick="BtnSair_Click" /></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </asp:Panel>
+
+                    <asp:Panel runat="server" ID="PnlLogin">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item text-center">
+                                <a class="nav-link" href="Login.aspx" runat="server">Login</a>
+                            </li>
+                            <li class="nav-item text-center">
+                                <a class="nav-link" href="Cadastro.aspx" runat="server">Cadastrar</a>
+                            </li>
+                        </ul>
+                    </asp:Panel>
+
+
+
+                </div>
+            </nav>
+        </header>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <footer class="container text-center mt-5 mb-5">
+            <div id="divFooter" class="row">
+                <div class="col-3">
+                    <p>Redes sociais</p>
+                </div>
+                <div class="col-6"></div>
+                <div class="col-3">
+                    <p>Meios de pagamento</p>
+                </div>
+                <hr />
+                <div class="col-3 ">
+                    <img src="../Icons/Facebook.png" />
+                    <img src="../Icons/Insta.png" />
+                    <img src="../Icons/WhatsApp.png" />
+                    <img src="../Icons/Youtbue.png" />
+                </div>
+                <div class="col-6"></div>
+                <div class="col-3 ">
+                    <img src="../Icons/American.png" />
+                    <img src="../Icons/Boleto.png" />
+                    <img src="../Icons/MasterCard.png" />
+                    <img src="../Icons/Visa.png" />
+                </div>
+            </div>
+        </footer>
+    </form>
+</body>
+</html>
